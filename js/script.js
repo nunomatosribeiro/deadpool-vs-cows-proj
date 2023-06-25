@@ -1,0 +1,1 @@
+//script.js - This file contains code that handles the game's start button.
