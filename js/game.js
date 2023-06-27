@@ -63,16 +63,21 @@ class Game {
 
     this.swords.forEach((sword) => {
       sword.move();
-      if (this.cows.hitBySword(sword)) {
+      for(let i= 0 ; i < this.cows.length; i +=1){
+
+      
+      if (this.cows[i].hitBySword(sword)) {
         //throws error 
         
         sword.element.remove();
-        this.obstacle.element.remove();
+        this.cows[i].element.remove();
         this.score += 1;
       } else {
         swordsToKeep.push(sword);
       }
+    }
     });
+  
 
     this.cows = obstaclesToKeep;
     this.swords = swordsToKeep;
@@ -80,6 +85,7 @@ class Game {
       this.isGameOver = true;
     }
   }
+
 
   endGame() {
     this.player.element.remove();

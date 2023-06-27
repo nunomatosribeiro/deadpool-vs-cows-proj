@@ -5,7 +5,7 @@ class Shoot{
         this.height = 60
 
         
-        this.left = 30
+        this.left = 50
         this.top = player + 50
         this.directionX = 0; 
 
