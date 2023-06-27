@@ -10,7 +10,7 @@ class Shoot{
         this.directionX = 0; 
 
         this.element = document.createElement('img');
-        this.element.src = 'Images/Deadpool_sword.png';
+        this.element.src = './Images/Deadpool_sword.png';
         this.element.style.transform = 'rotate(-45deg)';
         this.element.style.position = 'absolute';
 

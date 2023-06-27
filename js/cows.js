@@ -8,7 +8,7 @@ class Obstacles {
         this.height = 80
         this.element = document.createElement('img')
 
-        this.element.src = 'Images/deadpool_cow.webp'
+        this.element.src = './Images/deadpool_cow.webp'
         this.element.style.position = 'absolute'
 
         this.element.style.width = `${this.width}px`

@@ -11,7 +11,7 @@ this.height = 130
 this.element = document.createElement('img')
 
 
-this.element.src = 'Images/Deadpool_icon.game.png'
+this.element.src = './Images/Deadpool_icon.game.png'
 this.element.style.position = 'absolute'
 
 this.element.style.width = `${this.width}px`;
