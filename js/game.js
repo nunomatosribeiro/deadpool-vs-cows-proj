@@ -1,40 +1,93 @@
-//game.js - This is the file where we will define the Game class
-//to represent the game's data (properties) and behaviors (methods).
+class Game {
+  constructor() {
+    this.startScreen = document.getElementById("startScreen");
+    this.gameScreen = document.getElementById("gameScreen");
+    this.gameEndScreen = document.getElementById("GameEndScreen");
 
-class Game{
-    constructor(){
-        this.startScreen = getElementById('startScreen');
-        this.gameScreen = getElementById('gameContainer');
-        this.gameEndScreen = getElementById('gameEndScreen');
+    this.width = 100;
+    this.height = 100;
 
-        this.cows = [];
-        this.sword
-        this.player = new this.player(this.gameScreen);
-        this.isGameOver = false;
-        this.score = 0;
-        this.live = 3;
-        this.animated;
-    }
+    this.swords = [];
+    this.cows = [];
 
-start(){
+    this.player = null;
+    this.isGameOver = false;
+    this.score = 0;
+    this.lives = 3;
+    this.animateId;
+  }
 
-    this.startScreen.style.display = 'block'
-    this.gameScreen.style.display = 'none'
+  start() {
+    this.gameScreen.style.width = `${this.width}vw`;
+    this.gameScreen.style.height = `${this.height}vh`;
 
-}
+    this.startScreen.style.display = "none";
+    this.gameScreen.style.display = "block";
 
-gameLoop(){
+    this.player = new Player(this.gameScreen);
 
+    this.gameLoop();
+  }
+
+  gameLoop() {
     this.update();
-}
 
-update(){
+    if (Math.random() > 0.8 && this.cows.length < 1) {
+      this.cows.push(new Obstacles(this.gameScreen));
+    }
+    if (this.animateId % 200 === 0) {
+      this.cows.push(new Obstacles(this.gameScreen));
+    }
+    if (this.isGameOver) {
+      this.endGame();
+    } else {
+      this.animateId = requestAnimationFrame(() => this.gameLoop());
+    }
+  }
 
-}
+  update() {
+    this.player.move();
+    const swordsToKeep = [];
+    const obstaclesToKeep = [];
+    this.cows.forEach((obstacle) => {
+      obstacle.move();
+      if (this.player.hitByCow(obstacle)) {
+        obstacle.element.remove();
+        this.lives -= 1;
+      } else if (this.cows.left > this.gameScreen.offsetHeight) {
+        this.score += 1;
+      } else {
+        obstaclesToKeep.push(obstacle);
+      }
+    });
 
+    this.swords.forEach((sword) => {
+      sword.move();
+      if (this.cows.hitBySword(sword)) {
+        //throws error 
+        
+        sword.element.remove();
+        this.obstacle.element.remove();
+        this.score += 1;
+      } else {
+        swordsToKeep.push(sword);
+      }
+    });
 
+    this.cows = obstaclesToKeep;
+    this.swords = swordsToKeep;
+    if (this.lives <= 0) {
+      this.isGameOver = true;
+    }
+  }
 
+  endGame() {
+    this.player.element.remove();
+    this.cows.forEach((obstacle) => obstacle.element.remove());
 
-
-
+    // Hide game screen
+    this.gameScreen.style.display = "none";
+    // Show end game screen
+    this.gameEndScreen.style.display = "block";
+  }
 }
