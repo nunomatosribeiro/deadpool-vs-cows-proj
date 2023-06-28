@@ -27,9 +27,9 @@ Showing the Game Over Screen with restart button;
 
 
 Backlog Functionalities
-Adding a final boss when the score is reached
-Improving the UI.
-Adding the sounds.
+Adding a final boss when the score is reached;
+Improving the UI;
+Adding the sounds;
 Counting the score;
 Increment when hit by a extra live;
 

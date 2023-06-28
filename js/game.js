@@ -10,6 +10,7 @@ class Game {
     this.swords = [];
     this.cows = [];
 
+    this.mySound;
     this.player = null;
     this.isGameOver = false;
     this.score = 0;
@@ -25,6 +26,7 @@ class Game {
     this.gameScreen.style.display = "block";
 
     this.player = new Player(this.gameScreen);
+    
 
     this.gameLoop();
   }
@@ -56,7 +58,7 @@ class Game {
         obstacle.element.remove();
         this.lives -= 1;
       } else if (obstacle.left < 0) {
-        obstacle.element.remove()
+        obstacle.element.remove();
         this.score += 1;
       } else {
         obstaclesToKeep.push(obstacle);
@@ -87,9 +89,8 @@ class Game {
     this.player.element.remove();
     this.cows.forEach((obstacle) => obstacle.element.remove());
 
-    // Hide game screen
     this.gameScreen.style.display = "none";
-    // Show end game screen
+
     this.gameEndScreen.style.display = "block";
   }
 }
