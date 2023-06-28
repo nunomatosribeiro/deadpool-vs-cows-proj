@@ -16,6 +16,13 @@ class Game {
     this.score = 0;
     this.lives = 3;
     this.animateId;
+
+    this.sound = new Audio();
+    this.sound.src = '/audio/DMX sound.mp3'
+
+    this.gameSound = new Audio();
+    this.gameSound.src = '/audio/hit23.mp3.mp3'
+
   }
 
   start() {
@@ -26,7 +33,6 @@ class Game {
     this.gameScreen.style.display = "block";
 
     this.player = new Player(this.gameScreen);
-    
 
     this.gameLoop();
   }
@@ -68,6 +74,7 @@ class Game {
         if (obstacle.hitBySword(sword)) {
           sword.element.remove();
           obstacle.element.remove();
+          this.gameSound.play();
           this.score += 1;
         } else if (sword.left > this.gameScreen.offsetWidth) {
           sword.element.remove();
@@ -82,7 +89,10 @@ class Game {
 
     if (this.lives <= 0 || this.score === 20) {
       this.isGameOver = true;
+      this.sound.play()
     }
+
+    
   }
 
   endGame() {

@@ -3,7 +3,7 @@ class Player {
 this.gameScreen = gameScreen;
 this.directionY = 0;
 this.left = 50
-this.top = 10
+this.top = 50
 
 this.width = 70
 this.height = 130

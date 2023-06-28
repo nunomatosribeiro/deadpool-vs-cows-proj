@@ -2,7 +2,7 @@ class Obstacles {
   constructor(gameScreen) {
     this.gameScreen = gameScreen;
     this.left = 1500;
-    this.top = Math.floor(Math.random() * 500 + 10);
+    this.top = Math.floor(Math.random() * 500 + 50);
     this.width = 80;
     this.height = 80;
     this.element;
