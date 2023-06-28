@@ -35,7 +35,7 @@ class Game {
     if (Math.random() > 0.8 && this.cows.length < 1) {
       this.cows.push(new Obstacles(this.gameScreen));
     }
-    if (this.animateId % 200 === 0) {
+    if (this.animateId % 300 === 0) {
       this.cows.push(new Obstacles(this.gameScreen));
     }
     if (this.isGameOver) {
@@ -49,43 +49,39 @@ class Game {
     this.player.move();
     const swordsToKeep = [];
     const obstaclesToKeep = [];
+
     this.cows.forEach((obstacle) => {
       obstacle.move();
       if (this.player.hitByCow(obstacle)) {
         obstacle.element.remove();
         this.lives -= 1;
-      } else if (this.cows.left > this.gameScreen.offsetHeight) {
+      } else if (obstacle.left < 0) {
+        obstacle.element.remove()
         this.score += 1;
       } else {
         obstaclesToKeep.push(obstacle);
       }
+      this.swords.forEach((sword) => {
+        sword.move();
+        if (obstacle.hitBySword(sword)) {
+          sword.element.remove();
+          obstacle.element.remove();
+          this.score += 1;
+        } else if (sword.left > this.gameScreen.offsetWidth) {
+          sword.element.remove();
+        } else {
+          swordsToKeep.push(sword);
+        }
+      });
     });
-
-    this.swords.forEach((sword) => {
-      sword.move();
-      for(let i= 0 ; i < this.cows.length; i +=1){
-
-      
-      if (this.cows[i].hitBySword(sword)) {
-        //throws error 
-        
-        sword.element.remove();
-        this.cows[i].element.remove();
-        this.score += 1;
-      } else {
-        swordsToKeep.push(sword);
-      }
-    }
-    });
-  
 
     this.cows = obstaclesToKeep;
     this.swords = swordsToKeep;
-    if (this.lives <= 0) {
+
+    if (this.lives <= 0 || this.score === 20) {
       this.isGameOver = true;
     }
   }
-
 
   endGame() {
     this.player.element.remove();

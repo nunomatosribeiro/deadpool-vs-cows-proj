@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
       const shooting = [" "];
     
       if (shooting.includes(key)) {
-            game.swords.push(new Shoot(this.gameScreen, game.player.top))
+            game.swords.push(new Shoot(game.gameScreen, game.player.top))
             
       }
     });
@@ -47,7 +47,7 @@ window.addEventListener("load", () => {
     });
   }
 
-  function shootSword() {}
+  
 
   startButton.addEventListener("click", () => {
     startGame();

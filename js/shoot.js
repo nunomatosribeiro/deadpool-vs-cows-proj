@@ -25,7 +25,7 @@ class Shoot{
     }
 
     move(){
-        this.left += 2 
+        this.left += 1
     
         this.updatePosition()
     }

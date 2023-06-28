@@ -7,6 +7,7 @@ class Obstacles {
         this.width = 80
         this.height = 80
         this.element = document.createElement('img')
+        this.element;
 
         this.element.src = './Images/deadpool_cow.webp'
         this.element.style.position = 'absolute'
@@ -33,7 +34,7 @@ updatePosition() {
 
   hitBySword(sword){
     const swordsRect = sword.element.getBoundingClientRect()
-    const obstacleRect = this.cows.element.getBoundingClientRect()
+    const obstacleRect = this.element.getBoundingClientRect()
 
     if(
         swordsRect.top < obstacleRect.bottom &&
