@@ -13,6 +13,7 @@ class Shoot {
     this.element.style.transform = "rotate(-45deg)";
     this.element.style.position = "absolute";
 
+
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
 

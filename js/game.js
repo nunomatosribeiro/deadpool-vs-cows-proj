@@ -17,12 +17,14 @@ class Game {
     this.lives = 3;
     this.animateId;
 
+    this.introSound = new Audio();
+    this.introSound.src = "/audio/marvel-opening-theme.mp3";
+
     this.sound = new Audio();
-    this.sound.src = '/audio/DMX sound.mp3'
+    this.sound.src = "/audio/DMX sound.mp3";
 
     this.gameSound = new Audio();
-    this.gameSound.src = '/audio/hit23.mp3.mp3'
-
+    this.gameSound.src = "/audio/hit23.mp3.mp3";
   }
 
   start() {
@@ -75,6 +77,7 @@ class Game {
           sword.element.remove();
           obstacle.element.remove();
           this.gameSound.play();
+          this.introSound.play()
           this.score += 1;
         } else if (sword.left > this.gameScreen.offsetWidth) {
           sword.element.remove();
@@ -83,16 +86,15 @@ class Game {
         }
       });
     });
+    
 
     this.cows = obstaclesToKeep;
-    this.swords = swordsToKeep;
-
+    
+    
     if (this.lives <= 0 || this.score === 20) {
       this.isGameOver = true;
-      this.sound.play()
+      this.sound.play();
     }
-
-    
   }
 
   endGame() {
