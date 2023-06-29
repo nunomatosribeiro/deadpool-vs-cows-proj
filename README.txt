@@ -3,8 +3,9 @@ Play the Game!
 Game Logo
 
 Description
-Deadpool vs Cows is a game where the iconic Deadpool tries to kill all the cows he sees. The game ends when he reaches the number 20 in kills.
-During the game he also can collect 3 extra lives that will show randomly during his quest.
+Deadpool vs Cows is a game where the iconic Deadpool tries to kill all the cows he sees because of his phobia.
+The game ends when he reaches the number 20 in kills or when 3 cows hit him.
+
 
 Main Functionalities
 Cows move automatically and the player changes direction by clicking up and down.
