@@ -146,5 +146,10 @@ Trello:
 https://trello.com/invite/b/4taK2wpe/ATTI0e15b75ce0ed44d27bbdaf00b534e1d25CAD1179/project-game-deadpool
 
 Slides:
+https://docs.google.com/presentation/d/1WDEriOza4jxXkIz2j_y73rtwK-7w_PPw4jFzAQCvY3s/edit?usp=sharing
+
+Repo:
+https://github.com/nunomatosribeiro/deadpool-vs-cows-proj
 
 Deploy:
+https://nunomatosribeiro.github.io/deadpool-vs-cows-proj/
