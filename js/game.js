@@ -68,7 +68,6 @@ class Game {
         this.lives -= 1;
       } else if (obstacle.left < 0) {
         obstacle.element.remove();
-        this.score += 1;
       } else {
         obstaclesToKeep.push(obstacle);
       }
@@ -90,7 +89,7 @@ class Game {
 
     this.cows = obstaclesToKeep;
 
-    if (this.lives <= 0 || this.score === 20) {
+    if (this.lives <= 0 || this.score == 20) {
       this.isGameOver = true;
       this.sound.play();
       this.introSound.pause();
