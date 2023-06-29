@@ -33,6 +33,8 @@ if(this.top > this.gameScreen.offsetHeight - this.height - 10){
     this.top = this.gameScreen.offsetHeight -this.height - 10
 }
 
+
+
 this.updatePosition()
 
 }

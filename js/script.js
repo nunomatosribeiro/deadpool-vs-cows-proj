@@ -7,6 +7,7 @@ window.addEventListener("load", () => {
     game = new Game();
     game.start();
 
+
     document.addEventListener("keydown", (event) => {
       const key = event.key;
       const possibleKeyMoves = ["ArrowUp", "ArrowDown"];
@@ -21,6 +22,7 @@ window.addEventListener("load", () => {
         }
       }
     });
+    
 
     document.addEventListener("keydown", (event) => {
       const key = event.key;
@@ -51,6 +53,7 @@ window.addEventListener("load", () => {
 
   startButton.addEventListener("click", () => {
     startGame();
+
   });
 
   restartButton.addEventListener("click", () => {
