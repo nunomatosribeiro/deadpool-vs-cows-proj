@@ -34,3 +34,117 @@ Adding the sounds;
 Counting the score;
 Increment when hit by a extra live;
 
+Technologies Used
+HTML
+CSS
+JavaScript
+DOM Manipulation
+JS Classes
+Local Storage
+JS Audio() and JS Image()
+
+States
+Start Screen
+Game Screen
+End Game Screen
+
+Project Structure
+
+game.js
+this.startScreen 
+this.gameScreen 
+this.gameEndScreen 
+this.width
+this.height 
+this.swords 
+this.cows 
+this.mySound
+this.player 
+this.isGameOver 
+this.score
+this.lives
+this.animateId;
+this.introSound
+this.introSound.src
+this.sound
+this.sound.src
+this.gameSound
+this.gameSound.src
+
+start()
+gameLoop()
+update()
+endGame()
+
+shoot.js
+this.gameScreen
+this.width
+this.height
+
+this.left
+this.top
+this.element 
+this.element.src
+this.element.style.transform 
+this.element.style.position
+this.element.style.width
+this.element.style.height
+this.element.style.top 
+this.element.style.left
+this.gameScreen.appendChild(this.element);
+move()
+updatePosition()
+
+player.js
+this.gameScreen
+this.directionY
+this.left
+this.top 
+this.width
+this.height 
+this.element 
+this.element.src 
+this.element.style.position 
+this.element.style.width 
+this.element.style.height 
+this.element.style.top
+this.element.style.left
+this.gameScreen.appendChild(this.element)
+
+move()
+updatePosition()
+hitByCow(obstacle)
+
+cows.js
+this.gameScreen 
+this.left
+this.top
+this.width 
+this.height 
+this.element;
+this.element 
+this.element.src 
+this.element.style.position 
+this.element.style.width
+this.element.style.height 
+this.element.style.top 
+this.element.style.left
+this.gameScreen.appendChild(this.element);
+
+move()
+updatePosition()
+hitBySword(sword)
+
+script.js
+window.addEventListener
+startGame()
+startButton.addEventListener
+restartButton.addEventListener
+
+Links
+Trello:
+https://trello.com/invite/b/4taK2wpe/ATTI0e15b75ce0ed44d27bbdaf00b534e1d25CAD1179/project-game-deadpool
+
+Slides:
+
+Deploy:

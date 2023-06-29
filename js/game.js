@@ -42,10 +42,10 @@ class Game {
   gameLoop() {
     this.update();
 
-    if (Math.random() > 0.8 && this.cows.length < 1) {
+    if (Math.random() > 0.9 && this.cows.length < 1) {
       this.cows.push(new Obstacles(this.gameScreen));
     }
-    if (this.animateId % 300 === 0) {
+    if (this.animateId % 150 === 0) {
       this.cows.push(new Obstacles(this.gameScreen));
     }
     if (this.isGameOver) {

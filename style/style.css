@@ -38,6 +38,7 @@ body {
         width: 100vw;
         padding: 20px 0px;
         justify-content: center;
+        
   }
 
 #gameScreen{
@@ -95,8 +96,6 @@ body {
     text-align: center;
     display: none;
     
-
-
 }
 .deadpoolImg2 {
     width: 35%;
@@ -104,7 +103,6 @@ body {
     margin-top: 40px
     
 }
-
 
 
 #reload-button{
