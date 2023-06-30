@@ -107,6 +107,18 @@ body {
     
 }
 
+#scoreId {
+    display: flex;
+    flex-direction: row;
+  
+    margin-right: 55px;
+}
+
+#livesId {
+    display: flex;
+    flex-direction: row;
+   
+}
 
 #reload-button{
     background-color: lightcoral;

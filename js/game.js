@@ -15,7 +15,10 @@ class Game {
     this.isGameOver = false;
     
     this.score = 0;
+    this.scoreElement = document.getElementById('scoreId')
+
     this.lives = 3;
+    this.livesElement = document.getElementById('livesId')
     this.animateId;
     
     this.introSound = new Audio();
@@ -71,6 +74,7 @@ class Game {
       if (this.player.hitByCow(obstacle)) {
         obstacle.element.remove();
         this.lives -= 1;
+        this.livesElement.textContent = `lives: ${this.lives}`
       } else if (obstacle.left < 0) {
         obstacle.element.remove();
       } else {
@@ -84,6 +88,7 @@ class Game {
           this.gameSound.play();
           this.introSound.play();
           this.score += 1;
+          this.scoreElement.textContent = `score: ${this.score}`
         } else if (sword.left > this.gameScreen.offsetWidth) {
           sword.element.remove();
         } else {
