@@ -13,10 +13,11 @@ class Game {
     this.mySound;
     this.player = null;
     this.isGameOver = false;
+    
     this.score = 0;
     this.lives = 3;
     this.animateId;
-
+    
     this.introSound = new Audio();
     this.introSound.src = "./audio/marvel-opening-theme.mp3";
 
@@ -25,8 +26,12 @@ class Game {
 
     this.gameSound = new Audio();
     this.gameSound.src = "./audio/hit23.mp3.mp3";
+
+    
+
   }
 
+  
   start() {
     this.gameScreen.style.width = `${this.width}vw`;
     this.gameScreen.style.height = `${this.height}vh`;
@@ -35,8 +40,8 @@ class Game {
     this.gameScreen.style.display = "block";
 
     this.player = new Player(this.gameScreen);
-
     this.gameLoop();
+    
   }
 
   gameLoop() {
@@ -84,18 +89,19 @@ class Game {
         } else {
           swordsToKeep.push(sword);
         }
+        
       });
     });
-
+    
     this.cows = obstaclesToKeep;
-
+    
     if (this.lives <= 0 || this.score == 20) {
       this.isGameOver = true;
       this.sound.play();
       this.introSound.pause();
     }
   }
-
+  
   endGame() {
     this.player.element.remove();
     this.cows.forEach((obstacle) => obstacle.element.remove());

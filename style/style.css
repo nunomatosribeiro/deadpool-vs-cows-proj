@@ -95,11 +95,14 @@ body {
 #GameEndScreen {
     text-align: center;
     display: none;
-    
+    background-image: url('../Images/marvelBackground.jpg');
+    position: relative;
+    height: 100vh;
 }
+
 .deadpoolImg2 {
     width: 35%;
-    height: 30%;
+    height: 60%;
     margin-top: 40px
     
 }
