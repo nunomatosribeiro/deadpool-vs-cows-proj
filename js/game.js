@@ -19,6 +19,7 @@ class Game {
 
     this.lives = 3;
     this.livesElement = document.getElementById('livesId')
+    
     this.animateId;
     
     this.introSound = new Audio();
