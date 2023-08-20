@@ -1,6 +1,6 @@
 class Player {
-  constructor(gameScreen) {
-    this.gameScreen = gameScreen;
+  constructor(gameContainer) {
+    this.gameContainer = gameContainer;
     this.directionY = 0;
     this.left = 50;
     this.top = 50;
@@ -19,7 +19,7 @@ class Player {
     this.element.style.top = `${this.top}px`;
     this.element.style.left = `${this.left}px`;
 
-    this.gameScreen.appendChild(this.element);
+    this.gameContainer.appendChild(this.element);
   }
 
   move() {
@@ -27,8 +27,8 @@ class Player {
     if (this.top < 10) {
       this.top = 10;
     }
-    if (this.top > this.gameScreen.offsetHeight - this.height - 10) {
-      this.top = this.gameScreen.offsetHeight - this.height - 10;
+    if (this.top > this.gameContainer.offsetHeight - this.height - 10) {
+      this.top = this.gameContainer.offsetHeight - this.height - 10;
     }
 
     this.updatePosition();

@@ -7,7 +7,6 @@ window.addEventListener("load", () => {
     game = new Game();
     game.start();
 
-
     document.addEventListener("keydown", (event) => {
       const key = event.key;
       const possibleKeyMoves = ["ArrowUp", "ArrowDown"];
@@ -22,15 +21,13 @@ window.addEventListener("load", () => {
         }
       }
     });
-    
 
     document.addEventListener("keydown", (event) => {
       const key = event.key;
       const shooting = [" "];
-    
+
       if (shooting.includes(key)) {
-            game.swords.push(new Shoot(game.gameScreen, game.player.top))
-            
+        game.swords.push(new Shoot(game.gameContainer, game.player.top));
       }
     });
 
@@ -49,11 +46,8 @@ window.addEventListener("load", () => {
     });
   }
 
-  
-
   startButton.addEventListener("click", () => {
     startGame();
-
   });
 
   restartButton.addEventListener("click", () => {

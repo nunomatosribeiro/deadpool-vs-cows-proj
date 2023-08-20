@@ -1,6 +1,6 @@
 class Obstacles {
-  constructor(gameScreen) {
-    this.gameScreen = gameScreen;
+  constructor(gameContainer) {
+    this.gameContainer = gameContainer;
     this.left = 1500;
     this.top = Math.floor(Math.random() * 500 + 30);
     this.width = 80;
@@ -17,12 +17,12 @@ class Obstacles {
     this.element.style.top = `${this.top}px`;
     this.element.style.left = `${this.left}px`;
 
-    this.gameScreen.appendChild(this.element);
+    this.gameContainer.appendChild(this.element);
   }
 
   move() {
     this.left -= 2;
-   
+
     this.updatePosition();
   }
 
