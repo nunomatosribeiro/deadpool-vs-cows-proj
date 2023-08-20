@@ -35,14 +35,13 @@ body {
 }
 #gameContainer {
     display: none;
-        width: 100vw;
-        align-content: center;
-        
-        justify-content: center;
-        overflow: hidden;
-        background-image: url('../Images/Deadpool_background_gamescreen.jpg');
-        position: relative;
-        background-size: cover;
+    width: 100vw;
+    align-content: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url('../Images/Deadpool_background_gamescreen.jpg');
+    position: relative;
+    background-size: cover;
     background-position: center center;
   }
 
@@ -52,13 +51,7 @@ body {
     justify-content: space-around;
     height: 50px;
     width: 100vw;
-    
 }
-
-
-
-
-
 
 .deadpoolImg {
     width: 50%;
@@ -66,8 +59,6 @@ body {
     margin-top: 40px;
     margin-bottom: 30px;
 }
-
-
 
 .cows{
     position: absolute;
